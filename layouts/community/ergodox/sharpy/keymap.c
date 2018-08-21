@@ -7,6 +7,8 @@
 
 #include "keymap_nordic.h"
 
+#define _______ KC_TRNS
+
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
   EPRM,
@@ -29,11 +31,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *   |LCtrl | Left |  Up  | Down | Right|                                   | Home |  End | TT 1 | AltGr| RCtrl|
  *   .----------------------------------.                                   .----------------------------------.
  *                                      .-------------.       ,-------------.
- *                                      | Enter| PgUp |       | PgDn | OSL 2|
+ *                                      | LCtrl| PgUp |       | PgDn | RCtrl|
  *                               .------+------+------|       |------+------+------.
  *                               |      |      | Alt  |       | Alt  |      |      |
  *                               | Space|  Tab |------|       |------| OSL 1| Bksp |
- *                               |      |      | LCtrl|       | RCtrl|      |      |
+ *                               |      |      | Enter|       | OSL 2|      |      |
  *                               .--------------------.       .--------------------.
  */
   [0] = LAYOUT_ergodox(
@@ -43,18 +45,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ,KC_MINUS,       KC_Q,    KC_I,    KC_E,    KC_A,   KC_Y
     ,LT(1,KC_ESCAPE),KC_SLASH,KC_COMMA,KC_QUOTE,KC_DOT, KC_X,   LCTL(KC_V)
     ,OSM(MOD_LCTL),  KC_LEFT, KC_UP,   KC_DOWN, KC_RIGHT
-                                               ,KC_ENTER,KC_PGUP
+                                               ,OSM(MOD_LCTL),KC_PGUP
                                                        ,OSM(MOD_LALT)
-                                      ,KC_SPACE,KC_TAB, OSM(MOD_LCTL)
+                                      ,KC_SPACE,KC_TAB, KC_ENTER
     // Right
       ,LCTL(KC_F10),  KC_7,    KC_6,    KC_5,    KC_9,    KC_8,    TO(0)
       ,LGUI(KC_L),    KC_G,    KC_C,    KC_R,    KC_F,    KC_Z,    TT(3)
                      ,KC_D,    KC_S,    KC_T,    KC_N,    KC_B,    KC_COLN
       ,KC_DELETE,     KC_W,    KC_M,    KC_L,    KC_P,    KC_V,    LT(1,KC_ESCAPE)
                               ,KC_HOME, KC_END,  TT(1),   OSM(MOD_RALT),OSM(MOD_RCTL)
-      ,KC_PGDOWN,OSL(2)
+      ,KC_PGDOWN,     OSM(MOD_RCTL)
       ,OSM(MOD_LALT)
-      ,OSM(MOD_RCTL), OSL(1),  KC_BSPACE),
+      ,OSL(2), OSL(1),  KC_BSPACE),
 
 /* Layer 1: Shift
  *
@@ -70,11 +72,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *   |      |      |      |      |      |                                   |      |      |      |      |      |
  *   .----------------------------------.                                   .----------------------------------.
  *                                      .-------------.       ,-------------.
- *                                      |      |      |       |      | OSL 2|
+ *                                      |      |      |       |      |      |
  *                               .------+------+------|       |------+------+------.
  *                               |      |      |      |       |      |      |      |
  *                               |      |      |------|       |------|      |      |
- *                               |      |      |      |       |      |      |      |
+ *                               |      |      |      |       | OSL 2|      |      |
  *                               .--------------------.       .--------------------.
  */
   [1] = LAYOUT_ergodox(
@@ -83,13 +85,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ,KC_UNDS,LSFT(KC_Q),LSFT(KC_I),LSFT(KC_E),LSFT(KC_A),LSFT(KC_Y)
     ,KC_TRANSPARENT,KC_QUES,KC_EXLM,KC_GRAVE,KC_AT,LSFT(KC_X),LCTL(LSFT(KC_V))
     ,LSFT(KC_LCTL),LSFT(KC_LEFT),LSFT(KC_UP),LSFT(KC_DOWN),LSFT(KC_RIGHT)
-    ,LSFT(KC_ENTER),LSFT(KC_PGUP),LSFT(KC_LALT),LSFT(KC_SPACE),LSFT(KC_TAB),LSFT(KC_LCTL)
+    ,LSFT(KC_LCTL),LSFT(KC_PGUP),LSFT(KC_LALT),LSFT(KC_SPACE),LSFT(KC_TAB),LSFT(KC_ENTER)
     ,KC_TRANSPARENT,KC_TRANSPARENT,KC_CIRC,KC_PERC,KC_TILD,KC_TRANSPARENT,TO(0)
     ,KC_TRANSPARENT,LSFT(KC_G),LSFT(KC_C),LSFT(KC_R),LSFT(KC_F),LSFT(KC_Z),KC_TRANSPARENT
     ,LSFT(KC_D),LSFT(KC_S),LSFT(KC_T),LSFT(KC_N),LSFT(KC_B),KC_SCOLON
     ,LSFT(KC_DELETE),LSFT(KC_W),LSFT(KC_M),LSFT(KC_L),LSFT(KC_P),LSFT(KC_V),KC_TRANSPARENT
     ,LSFT(KC_HOME),LSFT(KC_END),KC_TRANSPARENT,LSFT(KC_RALT),LSFT(KC_RCTRL)
-    ,LSFT(KC_PGDOWN),KC_TRANSPARENT,LSFT(KC_LALT),LSFT(KC_LCTL),KC_TRANSPARENT,LSFT(KC_BSPACE)),
+    ,LSFT(KC_PGDOWN),LSFT(KC_LCTL),LSFT(KC_LALT),_______,KC_TRANSPARENT,LSFT(KC_BSPACE)),
 
   [2] = LAYOUT_ergodox(KC_TRANSPARENT,KC_4,KC_0,KC_1,KC_2,KC_3,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_LABK,KC_DLR,KC_RABK,KC_TRANSPARENT,KC_TRANSPARENT,KC_MINUS,KC_BSLASH,KC_LPRN,KC_DQUO,KC_RPRN,KC_HASH,KC_LSPO,KC_SLASH,KC_COLN,KC_ASTR,KC_PLUS,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_LEFT,KC_UP,KC_DOWN,KC_RIGHT,KC_ENTER,KC_PGUP,KC_TRANSPARENT,KC_SPACE,KC_TAB,KC_TRANSPARENT,KC_APPLICATION,KC_7,KC_6,KC_5,KC_9,KC_8,KC_TRANSPARENT,OSM(MOD_LGUI),KC_INSERT,KC_LBRACKET,KC_UNDS,KC_RBRACKET,KC_PAUSE,KC_TRANSPARENT,KC_PERC,KC_LCBR,KC_EQUAL,KC_RCBR,KC_PIPE,KC_SCOLON,KC_DELETE,KC_PSCREEN,KC_AMPR,KC_CIRC,KC_TILD,KC_TRANSPARENT,KC_RSPC,KC_HOME,KC_END,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_PGDOWN,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_TRANSPARENT,KC_BSPACE),
 
