@@ -37,18 +37,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                               .--------------------.       .--------------------.
  */
   [0] = LAYOUT_ergodox(
-          KC_F3,KC_4,KC_0,KC_1,KC_2,KC_3,LCTL(KC_Z)
-          ,TT(2),KC_J,KC_H,KC_O,KC_U,KC_K,LCTL(KC_C)
-          ,KC_MINUS,KC_Q,KC_I,KC_E,KC_A,KC_Y
-          ,LT(1,KC_ESCAPE),KC_SLASH,KC_COMMA,KC_QUOTE,KC_DOT,KC_X,LCTL(KC_V)
-          ,OSM(MOD_LCTL),KC_LEFT,KC_UP,KC_DOWN,KC_RIGHT
-          ,KC_ENTER,KC_PGUP,OSM(MOD_LALT),KC_SPACE,KC_TAB,OSM(MOD_LCTL)
-          ,LCTL(KC_F10),KC_7,KC_6,KC_5,KC_9,KC_8,TO(0)
-          ,LGUI(KC_L),KC_G,KC_C,KC_R,KC_F,KC_Z,TT(3)
-          ,KC_D,KC_S,KC_T,KC_N,KC_B,KC_COLN
-          ,KC_DELETE,KC_W,KC_M,KC_L,KC_P,KC_V,LT(1,KC_ESCAPE)
-          ,KC_HOME,KC_END,TT(1),OSM(MOD_RALT),OSM(MOD_RCTL)
-          ,KC_PGDOWN,OSL(2),OSM(MOD_LALT),OSM(MOD_RCTL),OSL(1),KC_BSPACE),
+    // Left
+     KC_F3,          KC_4,    KC_0,    KC_1,    KC_2,   KC_3,   LCTL(KC_Z)
+    ,TT(2),          KC_J,    KC_H,    KC_O,    KC_U,   KC_K,   LCTL(KC_C)
+    ,KC_MINUS,       KC_Q,    KC_I,    KC_E,    KC_A,   KC_Y
+    ,LT(1,KC_ESCAPE),KC_SLASH,KC_COMMA,KC_QUOTE,KC_DOT, KC_X,   LCTL(KC_V)
+    ,OSM(MOD_LCTL),  KC_LEFT, KC_UP,   KC_DOWN, KC_RIGHT
+                                               ,KC_ENTER,KC_PGUP
+                                                       ,OSM(MOD_LALT)
+                                      ,KC_SPACE,KC_TAB, OSM(MOD_LCTL)
+    // Right
+      ,LCTL(KC_F10),  KC_7,    KC_6,    KC_5,    KC_9,    KC_8,    TO(0)
+      ,LGUI(KC_L),    KC_G,    KC_C,    KC_R,    KC_F,    KC_Z,    TT(3)
+                     ,KC_D,    KC_S,    KC_T,    KC_N,    KC_B,    KC_COLN
+      ,KC_DELETE,     KC_W,    KC_M,    KC_L,    KC_P,    KC_V,    LT(1,KC_ESCAPE)
+                              ,KC_HOME, KC_END,  TT(1),   OSM(MOD_RALT),OSM(MOD_RCTL)
+      ,KC_PGDOWN,OSL(2)
+      ,OSM(MOD_LALT)
+      ,OSM(MOD_RCTL), OSL(1),  KC_BSPACE),
 
   [1] = LAYOUT_ergodox(
     LSFT(KC_ESCAPE),KC_TRANSPARENT,KC_KP_PLUS,KC_EQUAL,KC_KP_ASTERISK,KC_TRANSPARENT,LCTL(LSFT(KC_Z))
