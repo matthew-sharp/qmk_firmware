@@ -30,7 +30,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * .--------+------+------+------+------+-------------.       .-------------+------+------+------+------+--------.
  *   |LCtrl | Left |  Up  | Down | Right|                                   | Home |  End | TT 1 | AltGr| RCtrl|
  *   .----------------------------------.                                   .----------------------------------.
- *                                      .-------------.       ,-------------.
+ *                                      .-------------.       .-------------.
  *                                      | LCtrl| PgUp |       | PgDn | RCtrl|
  *                               .------+------+------|       |------+------+------.
  *                               |      |      | Alt  |       | Alt  |      |      |
@@ -71,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * .--------+------+------+------+------+-------------.       .-------------+------+------+------+------+--------.
  *   |      |      |      |      |      |                                   |      |      |      |      |      |
  *   .----------------------------------.                                   .----------------------------------.
- *                                      .-------------.       ,-------------.
+ *                                      .-------------.       .-------------.
  *                                      |      |      |       |      |      |
  *                               .------+------+------|       |------+------+------.
  *                               |      |      |      |       |      |      |      |
@@ -112,7 +112,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * .--------+------+------+------+------+-------------.       .-------------+------+------+------+------+--------.
  *   |      |      |      |      |      |                                   |      |      |      |      |      |
  *   .----------------------------------.                                   .----------------------------------.
- *                                      .-------------.       ,-------------.
+ *                                      .-------------.       .-------------.
  *                                      |      |      |       |      |      |
  *                               .------+------+------|       |------+------+------.
  *                               |      |      |      |       |      |      |      |
@@ -132,7 +132,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                         ,_______
                                       ,KC_SPACE,KC_TAB,  _______
   //Right
-  ,KC_APPLICATION,KC_7,KC_6,KC_5,KC_9,KC_8,_______,OSM(MOD_LGUI),KC_INSERT,KC_LBRACKET,KC_UNDS,KC_RBRACKET,KC_PAUSE,_______,KC_PERC,KC_LCBR,KC_EQUAL,KC_RCBR,KC_PIPE,KC_SCOLON,KC_DELETE,KC_PSCREEN,KC_AMPR,KC_CIRC,KC_TILD,_______,KC_RSPC,KC_HOME,KC_END,_______,_______,_______,KC_PGDOWN,_______,_______,_______,_______,KC_BSPACE),
+  ,KC_APPLICATION,    KC_7,     KC_6,    KC_5,    KC_9,    KC_8,    _______
+  ,OSM(MOD_LGUI),     KC_INSERT,KC_LBRACKET,KC_UNDS,KC_RBRACKET,KC_PAUSE,_______
+                     ,KC_PERC,  KC_LCBR, KC_EQUAL,KC_RCBR, KC_PIPE, KC_SCOLON
+  ,KC_DELETE,         KC_PSCREEN,KC_AMPR,KC_CIRC, KC_TILD, _______, KC_RSPC
+                               ,KC_HOME, KC_END,  _______, _______, _______
+  ,KC_PGDOWN,         _______
+  ,_______
+  ,_______, _______,  KC_BSPACE),
 
   [3] = LAYOUT_ergodox(_______,KC_NUMLOCK,KC_KP_PLUS,KC_EQUAL,KC_KP_ASTERISK,_______,_______,_______,KC_TAB,KC_7,KC_2,KC_4,KC_6,_______,KC_MINUS,KC_8,KC_0,KC_1,KC_3,KC_5,KC_LSPO,KC_KP_SLASH,KC_COMMA,KC_9,KC_DOT,KC_COLN,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,KC_F13,KC_F1,KC_F2,KC_F3,KC_F4,_______,KC_F14,KC_F5,KC_F6,KC_F7,KC_F8,_______,_______,KC_F15,KC_F9,KC_F10,KC_F11,KC_F12,KC_RSPC,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______),
 
