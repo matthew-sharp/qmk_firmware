@@ -40,14 +40,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [0] = LAYOUT_ergodox(
     // Left
-     KC_F3,          KC_4,    KC_0,    KC_1,    KC_2,   KC_3,   LCTL(KC_Z)
-    ,TT(2),          KC_J,    KC_H,    KC_O,    KC_U,   KC_K,   LCTL(KC_C)
-    ,KC_MINUS,       KC_Q,    KC_I,    KC_E,    KC_A,   KC_Y
-    ,LT(1,KC_ESCAPE),KC_SLASH,KC_COMMA,KC_QUOTE,KC_DOT, KC_X,   LCTL(KC_V)
+     KC_F3,          KC_4,    KC_0,    KC_1,    KC_2,    KC_3,   LCTL(KC_Z)
+    ,TT(2),          KC_J,    KC_H,    KC_O,    KC_U,    KC_K,   LCTL(KC_C)
+    ,KC_MINUS,       KC_Q,    KC_I,    KC_E,    KC_A,    KC_Y
+    ,LT(1,KC_ESCAPE),KC_SLASH,KC_COMMA,KC_QUOTE,KC_DOT,  KC_X,   LCTL(KC_V)
     ,OSM(MOD_LCTL),  KC_LEFT, KC_UP,   KC_DOWN, KC_RIGHT
                                                ,OSM(MOD_LCTL),KC_PGUP
-                                                       ,OSM(MOD_LALT)
-                                      ,KC_SPACE,KC_TAB, KC_ENTER
+                                                        ,OSM(MOD_LALT)
+                                      ,KC_SPACE,KC_TAB,  KC_ENTER
     // Right
       ,LCTL(KC_F10),  KC_7,    KC_6,    KC_5,    KC_9,    KC_8,    TO(0)
       ,LGUI(KC_L),    KC_G,    KC_C,    KC_R,    KC_F,    KC_Z,    TT(3)
@@ -84,22 +84,55 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      LSFT(KC_ESCAPE),_______,  KC_PLUS, KC_EQUAL,KC_ASTERISK,_______,LCTL(LSFT(KC_Z))
     ,_______,        LSFT(KC_J),LSFT(KC_H),LSFT(KC_O),LSFT(KC_U),LSFT(KC_K),LCTL(LSFT(KC_C))
     ,KC_UNDS,        LSFT(KC_Q),LSFT(KC_I),LSFT(KC_E),LSFT(KC_A),LSFT(KC_Y)
-    ,_______,        KC_QUES, KC_EXLM, KC_GRAVE,KC_AT,  LSFT(KC_X),LCTL(LSFT(KC_V))
+    ,_______,        KC_QUES, KC_EXLM, KC_GRAVE,KC_AT,   LSFT(KC_X),LCTL(LSFT(KC_V))
     ,OSM(MOD_LSFT|MOD_LCTL),LSFT(KC_LEFT),LSFT(KC_UP),LSFT(KC_DOWN),LSFT(KC_RIGHT)
                                                ,OSM(MOD_LSFT|MOD_LCTL),LSFT(KC_PGUP)
                                                        ,OSM(MOD_LSFT|MOD_LALT)
-                                      ,LSFT(KC_SPACE), LSFT(KC_TAB),LSFT(KC_ENTER)
+                                      ,LSFT(KC_SPACE),LSFT(KC_TAB),LSFT(KC_ENTER)
     // Right
-    ,_______,        _______,  KC_CIRC, KC_PERC, KC_TILD, _______, TO(0)
-    ,_______,        LSFT(KC_G),LSFT(KC_C),LSFT(KC_R),LSFT(KC_F),LSFT(KC_Z),_______
-                    ,LSFT(KC_D),LSFT(KC_S),LSFT(KC_T),LSFT(KC_N),LSFT(KC_B),KC_SCOLON
-    ,LSFT(KC_DELETE),LSFT(KC_W),LSFT(KC_M),LSFT(KC_L),LSFT(KC_P),LSFT(KC_V),_______
+    ,_______,         _______,  KC_CIRC, KC_PERC, KC_TILD, _______, TO(0)
+    ,_______,         LSFT(KC_G),LSFT(KC_C),LSFT(KC_R),LSFT(KC_F),LSFT(KC_Z),_______
+                     ,LSFT(KC_D),LSFT(KC_S),LSFT(KC_T),LSFT(KC_N),LSFT(KC_B),KC_SCOLON
+    ,LSFT(KC_DELETE), LSFT(KC_W),LSFT(KC_M),LSFT(KC_L),LSFT(KC_P),LSFT(KC_V),_______
                               ,LSFT(KC_HOME),LSFT(KC_END),_______,LSFT(KC_RALT),LSFT(KC_RCTRL)
-    ,LSFT(KC_PGDOWN),LSFT(KC_LCTL)
+    ,LSFT(KC_PGDOWN), LSFT(KC_LCTL)
     ,LSFT(KC_LALT)
     ,_______,  _______,LSFT(KC_BSPACE)),
 
-  [2] = LAYOUT_ergodox(_______,KC_4,KC_0,KC_1,KC_2,KC_3,_______,_______,_______,KC_LABK,KC_DLR,KC_RABK,_______,_______,KC_MINUS,KC_BSLASH,KC_LPRN,KC_DQUO,KC_RPRN,KC_HASH,KC_LSPO,KC_SLASH,KC_COLN,KC_ASTR,KC_PLUS,_______,_______,_______,KC_LEFT,KC_UP,KC_DOWN,KC_RIGHT,KC_ENTER,KC_PGUP,_______,KC_SPACE,KC_TAB,_______,KC_APPLICATION,KC_7,KC_6,KC_5,KC_9,KC_8,_______,OSM(MOD_LGUI),KC_INSERT,KC_LBRACKET,KC_UNDS,KC_RBRACKET,KC_PAUSE,_______,KC_PERC,KC_LCBR,KC_EQUAL,KC_RCBR,KC_PIPE,KC_SCOLON,KC_DELETE,KC_PSCREEN,KC_AMPR,KC_CIRC,KC_TILD,_______,KC_RSPC,KC_HOME,KC_END,_______,_______,_______,KC_PGDOWN,_______,_______,_______,_______,KC_BSPACE),
+/* Layer 2: Symbols
+ *
+ * .--------------------------------------------------.       .--------------------------------------------------.
+ * |        |   4  |   0  |   1  |   2  |   3  |      |       |  App |   7  |   6  |   5  |   9  |   8  |  TO 0  |
+ * |--------+------+------+------+------+-------------|       |------+------+------+------+------+------+--------|
+ * |        |      |   <  |   $  |   >  |      |      |       | Supr |  Ins |   [  |   _  |   ]  | Pause|  TT 3  |
+ * |--------+------+------+------+------+------|      |       |      |------+------+------+------+------+--------|
+ * |    -   |   \  |   (  |   "  |   )  |   #  |------|       |------|   %  |   {  |   =  |   }  |   |  |    ;   |
+ * |--------+------+------+------+------+------|      |       |  Del |------+------+------+------+------+--------|
+ * |        |   /  |   :  |   *  |   +  |      |      |       |      | PrtSc|   &  |   ^  |   ~  |      |        |
+ * .--------+------+------+------+------+-------------.       .-------------+------+------+------+------+--------.
+ *   |      |      |      |      |      |                                   |      |      |      |      |      |
+ *   .----------------------------------.                                   .----------------------------------.
+ *                                      .-------------.       ,-------------.
+ *                                      |      |      |       |      |      |
+ *                               .------+------+------|       |------+------+------.
+ *                               |      |      |      |       |      |      |      |
+ *                               |      |      |------|       |------|      |      |
+ *                               |      |      |      |       | OSL 2|      |      |
+ *                               .--------------------.       .--------------------.
+ */
+
+  [2] = LAYOUT_ergodox(
+  //Left
+   _______,          KC_4,    KC_0,    KC_1,    KC_2,    KC_3,   _______
+  ,_______,          _______, KC_LABK, KC_DLR,  KC_RABK, _______,_______
+  ,KC_MINUS,         KC_BSLASH,KC_LPRN,KC_DQUO, KC_RPRN, KC_HASH
+  ,KC_LSPO,          KC_SLASH,KC_COLN, KC_ASTR, KC_PLUS, _______,_______
+  ,_______,          KC_LEFT, KC_UP,   KC_DOWN, KC_RIGHT
+                                               ,KC_ENTER,KC_PGUP
+                                                        ,_______
+                                      ,KC_SPACE,KC_TAB,  _______
+  //Right
+  ,KC_APPLICATION,KC_7,KC_6,KC_5,KC_9,KC_8,_______,OSM(MOD_LGUI),KC_INSERT,KC_LBRACKET,KC_UNDS,KC_RBRACKET,KC_PAUSE,_______,KC_PERC,KC_LCBR,KC_EQUAL,KC_RCBR,KC_PIPE,KC_SCOLON,KC_DELETE,KC_PSCREEN,KC_AMPR,KC_CIRC,KC_TILD,_______,KC_RSPC,KC_HOME,KC_END,_______,_______,_______,KC_PGDOWN,_______,_______,_______,_______,KC_BSPACE),
 
   [3] = LAYOUT_ergodox(_______,KC_NUMLOCK,KC_KP_PLUS,KC_EQUAL,KC_KP_ASTERISK,_______,_______,_______,KC_TAB,KC_7,KC_2,KC_4,KC_6,_______,KC_MINUS,KC_8,KC_0,KC_1,KC_3,KC_5,KC_LSPO,KC_KP_SLASH,KC_COMMA,KC_9,KC_DOT,KC_COLN,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,KC_F13,KC_F1,KC_F2,KC_F3,KC_F4,_______,KC_F14,KC_F5,KC_F6,KC_F7,KC_F8,_______,_______,KC_F15,KC_F9,KC_F10,KC_F11,KC_F12,KC_RSPC,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______,_______),
 
@@ -149,7 +182,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-    
   }
   return true;
 }
