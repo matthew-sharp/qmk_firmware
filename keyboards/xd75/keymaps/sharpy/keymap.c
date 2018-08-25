@@ -39,19 +39,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 uint32_t layer_state_set_user(uint32_t state) {
-  switch (biton32(state)) {
-  case 0:
-    rgblight_setrgb (0x00,  0x00, 0x00);
-    break;
-  case 1:
-    rgblight_setrgb (0xFF,  0x00, 0x00);
-    break;
-  case 2:
-    rgblight_setrgb (0x00,  0xFF, 0x00);
-    break;
-  case 3:
-    rgblight_setrgb (0x7A,  0x00, 0xFF);
-    break;
-  }
+  uint8_t r = 0, g = 0, b = 0;
+  if (state & (1 << 1))
+    r += 0xFF;
+  if (state & (1 << 2))
+    g += 0xFF;
+  if (state & (1 << 3))
+    b += 0xFF;
+  rgblight_setrgb(r, g, b);
   return state;
 }
