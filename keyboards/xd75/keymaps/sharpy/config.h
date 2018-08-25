@@ -23,4 +23,7 @@
 #define TAPPING_TOGGLE  1
 #undef RGBLIGHT_ANIMATIONS
 
+#undef IS_COMMAND
+#define IS_COMMAND() (keyboard_report->mods == (MOD_BIT(KC_LCTL) | MOD_BIT(KC_RCTL)))
+
 #endif

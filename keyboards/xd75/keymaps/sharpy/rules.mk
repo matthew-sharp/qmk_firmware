@@ -16,3 +16,7 @@
 ifndef QUANTUM_DIR
 	include ../../../../Makefile
 endif
+
+#CONSOLE_ENABLE = yes
+MOUSEKEY_ENABLE = no
+BOOTMAGIC_ENABLE = no
