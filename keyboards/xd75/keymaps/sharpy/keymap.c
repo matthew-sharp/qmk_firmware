@@ -54,7 +54,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    ,KC_MINS, KC_BSLS, KC_LPRN, KC_DQUO, KC_RPRN, KC_HASH, KC_VOLU, _______, KC_MNXT, KC_PERC, KC_LCBR, KC_EQL,  KC_RCBR,KC_PIPE,  KC_SCLN
    ,KC_LSPO, KC_SLSH, KC_COLN, KC_ASTR, KC_PLUS, KC_NO,   _______, _______, _______, KC_PSCR, KC_UNDS, KC_CIRC, KC_TILD,KC_NO,    KC_RSPC
    ,_______, _______, _______, _______, _______, _______, _______, _______, KC_NO,   _______, _______, KC_APP,  KC_NO,  KC_NO,    _______),
-  [3] = LAYOUT_ortho_5x15(KC_NO, KC_NO, KC_SLSH, KC_ASTR, KC_MINS, KC_NO, KC_NO, RESET, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, _______, KC_COLN, KC_7, KC_8, KC_9, KC_PLUS, KC_CIRC, KC_NO, DEBUG, KC_NO, KC_NO, KC_F1, KC_F2, KC_F3, KC_F4, _______, KC_TAB, KC_4, KC_5, KC_6, KC_EQL, KC_COMM, KC_NO, KC_NO, KC_NO, KC_NO, KC_F5, KC_F6, KC_F7, KC_F8, KC_NO, KC_NO, KC_1, KC_2, KC_3, KC_ENT, KC_NO, KC_NO, KC_UP, KC_NO, KC_NO, KC_F9, KC_F10, KC_F11, KC_F12, KC_NO, KC_NO, KC_0, KC_0, KC_DOT, KC_ENT, KC_SPC, KC_LEFT, KC_DOWN, KC_RGHT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO)
+
+/* Layer 3: Numpad and function
+ * .--------------------------------------------------------------------------------------------------------------------------------------.
+ * |        |        |   =    |   /    |   *    |   -    |        |  Reset |        |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |        |   :    |   7    |   8    |   9    |   +    |        |  Debug |        |        |   F1   |   F2   |   F3   |   F4   |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |   (    |  Tab   |   4    |   5    |   6    |   +    |    )   |        |        |        |   F5   |   F6   |   F7   |   F8   |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |        |   ,    |   1    |   2    |   3    | Enter  |        |   Up   |        |        |   F9   |   F10  |   F11  |   F12  |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |        |        |   0    |   0    |   .    |  Spc   |  Left  |  Down  | Right  |        |        |        |        |        |        |
+ * '--------------------------------------------------------------------------------------------------------------------------------------'
+ */
+  [3] = LAYOUT_ortho_5x15(
+    KC_NO,   KC_NO,   KC_EQL,  KC_SLSH, KC_ASTR, KC_MINS, KC_NO,   RESET,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  KC_NO,    _______
+   ,KC_NO,   KC_COLN, KC_7,    KC_8,    KC_9,    KC_PLUS, KC_NO,   DEBUG,   KC_NO,   KC_NO,   KC_F1,   KC_F2,   KC_F3,  KC_F4,    _______
+   ,KC_LPRN, KC_TAB,  KC_4,    KC_5,    KC_6,    KC_PLUS, KC_RPRN, KC_NO,   KC_NO,   KC_NO,   KC_F5,   KC_F6,   KC_F7,  KC_F8,    KC_NO
+   ,_______, KC_COMM, KC_1,    KC_2,    KC_3,    KC_ENT,  KC_NO,   KC_UP,   KC_NO,   KC_NO,   KC_F9,   KC_F10,  KC_F11, KC_F12,   _______
+   ,_______, KC_NO,   KC_0,    KC_0,    KC_DOT,  KC_SPC,  KC_LEFT, KC_DOWN, KC_RGHT, KC_NO,   KC_NO,   KC_NO,   KC_NO,  KC_NO,    _______)
 };
 
 uint32_t layer_state_set_user(uint32_t state) {
