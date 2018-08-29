@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    ,_______, KC_CALC, KC_LT,   KC_DLR,  KC_GT,   KC_NO,   KC_VOLD, _______, KC_MPRV, KC_INS,  KC_LBRC, KC_AMPR, KC_RBRC,KC_PAUS,  _______
    ,KC_MINS, KC_BSLS, KC_LPRN, KC_DQUO, KC_RPRN, KC_HASH, KC_VOLU, _______, KC_MNXT, KC_PERC, KC_LCBR, KC_EQL,  KC_RCBR,KC_PIPE,  KC_SCLN
    ,KC_LSPO, KC_SLSH, KC_COLN, KC_ASTR, KC_PLUS, KC_NO,   _______, _______, _______, KC_PSCR, KC_UNDS, KC_CIRC, KC_TILD,KC_NO,    KC_RSPC
-   ,_______, _______, _______, _______, _______, _______, _______, _______, KC_NO,   _______, _______, KC_APP,  KC_NO,  KC_NO,    _______),
+   ,_______, _______, _______, _______, _______, _______, _______, _______, KC_NO,   _______, _______, KC_APP,  KC_NO,  _______,  _______),
 
 /* Layer 3: Numpad and function
  * .--------------------------------------------------------------------------------------------------------------------------------------.
