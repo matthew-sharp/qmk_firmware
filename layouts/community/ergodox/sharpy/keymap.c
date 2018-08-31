@@ -25,15 +25,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |  TT 2  |   J  |   H  |   O  |   U  |   K  |Ctrl+C|       |Supr+L|   G  |   C  |   R  |   F  |   Z  |  TT 3  |
  * |--------+------+------+------+------+------|      |       |      |------+------+------+------+------+--------|
  * |    -   |   Q  |   I  |   E  |   A  |   Y  |------|       |------|   D  |   S  |   T  |   N  |   B  |    :   |
- * |--------+------+------+------+------+------|Ctrl+V|       | Del  |------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------|Ctrl+V|       | Alt  |------+------+------+------+------+--------|
  * |Shft/Esc|   /  |   ,  |   '  |   .  |   X  |      |       |      |   W  |   M  |   L  |   P  |   V  |Shft/Esc|
  * .--------+------+------+------+------+-------------.       .-------------+------+------+------+------+--------.
- *   |LCtrl | Left |  Up  | Down | Right|                                   | Home |  End | TT 1 | AltGr| RCtrl|
+ *   |LCtrl | Left |  Up  | Down | Right|                                   |  Del |  End | TT 1 | AltGr| RCtrl|
  *   .----------------------------------.                                   .----------------------------------.
  *                                      .-------------.       .-------------.
- *                                      | LCtrl| PgUp |       | PgDn | RCtrl|
+ *                                      | LCtrl| Home |       | PgUp | RCtrl|
  *                               .------+------+------|       |------+------+------.
- *                               |      |      | Alt  |       | Alt  |      |      |
+ *                               |      |      | End  |       | PgDn |      |      |
  *                               | Space|  Tab |------|       |------| OSL 1| Bksp |
  *                               |      |      | Enter|       | OSL 2|      |      |
  *                               .--------------------.       .--------------------.
@@ -45,17 +45,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ,KC_MINUS,       KC_Q,    KC_I,    KC_E,    KC_A,    KC_Y
     ,LT(1,KC_ESCAPE),KC_SLASH,KC_COMMA,KC_QUOTE,KC_DOT,  KC_X,   LCTL(KC_V)
     ,OSM(MOD_LCTL),  KC_LEFT, KC_UP,   KC_DOWN, KC_RIGHT
-                                               ,OSM(MOD_LCTL),KC_PGUP
-                                                        ,OSM(MOD_LALT)
+                                               ,OSM(MOD_LCTL),KC_HOME
+                                                        ,KC_END
                                       ,KC_SPACE,KC_TAB,  KC_ENTER
     // Right
       ,LCTL(KC_F10),  KC_7,    KC_6,    KC_5,    KC_9,    KC_8,    TO(0)
       ,LGUI(KC_L),    KC_G,    KC_C,    KC_R,    KC_F,    KC_Z,    TT(3)
                      ,KC_D,    KC_S,    KC_T,    KC_N,    KC_B,    KC_COLN
-      ,KC_DELETE,     KC_W,    KC_M,    KC_L,    KC_P,    KC_V,    LT(1,KC_ESCAPE)
-                              ,KC_HOME, KC_END,  TT(1),   OSM(MOD_RALT),OSM(MOD_RCTL)
-      ,KC_PGDOWN,     OSM(MOD_RCTL)
-      ,OSM(MOD_LALT)
+      ,OSM(MOD_LALT), KC_W,    KC_M,    KC_L,    KC_P,    KC_V,    LT(1,KC_ESCAPE)
+                              ,KC_DELETE,KC_END, TT(1),   OSM(MOD_RALT),OSM(MOD_RCTL)
+      ,KC_PGUP,       OSM(MOD_RCTL)
+      ,KC_PGDOWN
       ,OSL(2), OSL(1),  KC_BSPACE),
 
 /* Layer 1: Shift
@@ -168,7 +168,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    _______,          KC_EQUAL,KC_7,    KC_8,    KC_9,    KC_MINUS,_______
   ,_______,          KC_TAB,  KC_4,    KC_5,    KC_6,    KC_PLUS,_______
   ,KC_LPRN,          KC_ASTERISK,KC_1, KC_2,    KC_3,    KC_RPRN
-  ,_______,          KC_SLASH,KC_0,    KC_0,    KC_DOT,  KC_ENTER,_______
+  ,LSFT_T(KC_ESCAPE),KC_SLASH,KC_0,    KC_0,    KC_DOT,  KC_ENTER,_______
   ,_______,          _______, _______, _______, _______
                                                ,_______, _______
                                                         ,_______
@@ -177,7 +177,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ,_______,           _______,  _______, _______, _______, _______, _______
   ,_______,           KC_F13,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   _______
                      ,KC_F14,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   _______
-  ,_______,           KC_F15,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  _______
+  ,_______,           KC_F15,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  RSFT_T(KC_ESCAPE)
                                ,_______, _______, _______, _______, _______
   ,_______, _______
   ,_______
