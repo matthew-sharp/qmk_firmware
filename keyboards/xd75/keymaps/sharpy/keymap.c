@@ -19,7 +19,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |Shft/Esc|   /    |   ,    |   '    |   .    |   X    | Enter  |  Alt   |  OSL2  |   W    |   M    |   L    |   P    |   V    |Shft/Esc|
  * |--------+--------+--------+--------+--------+-----------------+--------+--------+--------+--------+-----------------+--------+--------|
  * |        |        |        |        |        |        |        |        |        |        |        |        |  Next  |        |        |
- * |  Ctrl  |  Left  |   Up   |  Down  |  Right |  Spc   |  Tab   |  Ctrl  |  OSL1  |  Bksp  |  Del   |  Supr  | Play/Ps| AltGr  |  Ctrl  |
+ * |  OSL4  |  Left  |   Up   |  Down  |  Right |  Spc   |  Tab   |  Ctrl  |  OSL1  |  Bksp  |  Del   |  Supr  | Play/Ps| AltGr  |  Ctrl  |
  * '--------------------------------------------------------------------------------------------------------------------------------------'
  */
   [0] = LAYOUT_ortho_5x15(
@@ -27,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    ,TT(2),   KC_J,    KC_H,    KC_O,    KC_U,    KC_K,    KC_HOME, KC_DQUO, KC_PGUP, KC_G,    KC_C,    KC_R,    KC_F,   KC_Z,     TT(3)
    ,KC_MINS, KC_Q,    KC_I,    KC_E,    KC_A,    KC_Y,    KC_END, KC_AMPR,  KC_PGDN, KC_D,    KC_S,    KC_T,    KC_N,   KC_B,     KC_COLN
    ,LT(1,KC_ESCAPE), KC_SLSH, KC_COMM, KC_QUOT, KC_DOT, KC_X, KC_ENT, OSM(MOD_LALT), OSL(2), KC_W, KC_M, KC_L,  KC_P,   KC_V,     LT(1,KC_ESCAPE)
-   ,OSM(MOD_LCTL), KC_LEFT, KC_UP, KC_DOWN, KC_RGHT, KC_SPC, KC_TAB, OSM(MOD_LCTL), OSL(1), KC_BSPC, KC_DEL, OSM(MOD_LGUI), KC_MPLY, KC_RALT, OSM(MOD_RCTL)),
+   ,OSL(4), KC_LEFT, KC_UP, KC_DOWN, KC_RGHT, KC_SPC, KC_TAB, OSM(MOD_LCTL), OSL(1), KC_BSPC, KC_DEL, OSM(MOD_LGUI), KC_MPLY, KC_RALT, OSM(MOD_RCTL)),
   [1] = LAYOUT_ortho_5x15(
     LSFT(KC_ESC), KC_F3, KC_PLUS, KC_EQL, KC_ASTR, KC_F4, LCTL(LSFT(KC_Z)), _______, LCTL(LSFT(KC_F10)), KC_F5, KC_CIRC, KC_PERC, KC_TILD, KC_F12, _______
    ,_______, LSFT(KC_J), LSFT(KC_H), LSFT(KC_O), LSFT(KC_U), LSFT(KC_K), LSFT(KC_HOME), KC_HASH, LSFT(KC_PGUP), LSFT(KC_G), LSFT(KC_C), LSFT(KC_R), LSFT(KC_F), LSFT(KC_Z), _______
@@ -73,7 +73,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    ,KC_NO,   KC_COLN, KC_7,    KC_8,    KC_9,    KC_PLUS, KC_NO,   DEBUG,   KC_NO,   KC_NO,   KC_F1,   KC_F2,   KC_F3,  KC_F4,    _______
    ,KC_LPRN, KC_TAB,  KC_4,    KC_5,    KC_6,    KC_PLUS, KC_RPRN, KC_NO,   KC_NO,   KC_NO,   KC_F5,   KC_F6,   KC_F7,  KC_F8,    KC_NO
    ,_______, KC_COMM, KC_1,    KC_2,    KC_3,    KC_ENT,  _______, KC_UP,   KC_NO,   KC_NO,   KC_F9,   KC_F10,  KC_F11, KC_F12,   _______
-   ,_______, KC_NO,   KC_0,    KC_0,    KC_DOT,  KC_SPC,  KC_LEFT, KC_DOWN, KC_RGHT, _______, _______, KC_NO,   KC_NO,  KC_NO,    _______)
+   ,_______, KC_NO,   KC_0,    KC_0,    KC_DOT,  KC_SPC,  KC_LEFT, KC_DOWN, KC_RGHT, _______, _______, KC_NO,   KC_NO,  KC_NO,    _______),
+
+/* Layer 4: Ctrl shortcuts
+ * .--------------------------------------------------------------------------------------------------------------------------------------.
+ * |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |        | Ctrl+A |        |        |        |        |        |        |        |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |        | Ctrl+Z | Ctrl+X | Ctrl+C | Ctrl+V |        |        |        |        |        |        |        |        |        |        |
+ * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
+ * |        |        |        |        |        |        |        |        |        |        |        |        |        |        |        |
+ * '--------------------------------------------------------------------------------------------------------------------------------------'
+ */
+  [4] = LAYOUT_ortho_5x15(
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+   ,_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+   ,_______, LCTL(KC_A),_______,_______,_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+   ,_______, LCTL(KC_Z),LCTL(KC_X),LCTL(KC_C),LCTL(KC_V), _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+   ,_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______)
 };
 
 uint32_t layer_state_set_user(uint32_t state) {
