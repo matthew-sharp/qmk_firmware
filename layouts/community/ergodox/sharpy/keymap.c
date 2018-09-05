@@ -28,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+------|Ctrl+V|       | Alt  |------+------+------+------+------+--------|
  * |Shft/Esc|   /  |   ,  |   '  |   .  |   X  |      |       |      |   W  |   M  |   L  |   P  |   V  |Shft/Esc|
  * .--------+------+------+------+------+-------------.       .-------------+------+------+------+------+--------.
- *   |LCtrl | Left |  Up  | Down | Right|                                   |  Del |  End | TT 1 | AltGr| RCtrl|
+ *   |LCtrl | Left |  Up  | Down | Right|                                   |  Del |Shift | TT 1 | AltGr| RCtrl|
  *   .----------------------------------.                                   .----------------------------------.
  *                                      .-------------.       .-------------.
  *                                      | LCtrl| Home |       | PgUp | RCtrl|
@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       ,LGUI(KC_L),    KC_G,    KC_C,    KC_R,    KC_F,    KC_Z,    TT(3)
                      ,KC_D,    KC_S,    KC_T,    KC_N,    KC_B,    KC_COLN
       ,OSM(MOD_LALT), KC_W,    KC_M,    KC_L,    KC_P,    KC_V,    LT(1,KC_ESCAPE)
-                              ,KC_DELETE,KC_END, TT(1),   OSM(MOD_RALT),OSM(MOD_RCTL)
+                              ,KC_DELETE,OSM(MOD_LSFT),TT(1),OSM(MOD_RALT),OSM(MOD_RCTL)
       ,KC_PGUP,       OSM(MOD_RCTL)
       ,KC_PGDOWN
       ,OSL(2), OSL(1),  KC_BSPACE),
