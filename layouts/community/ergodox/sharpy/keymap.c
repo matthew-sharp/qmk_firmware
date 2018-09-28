@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Layer 0: Base
  *
  * .--------------------------------------------------.       .--------------------------------------------------.
- * |   F3   |   4  |   0  |   1  |   2  |   3  |Ctrl+Z|       |Ctrl+F10| 7  |   6  |   5  |   9  |   8  |  TO 0  |
+ * |    &   |   4  |   0  |   1  |   2  |   3  |Ctrl+Z|       |Ctrl+F10| 7  |   6  |   5  |   9  |   8  |  TO 0  |
  * |--------+------+------+------+------+-------------|       |------+------+------+------+------+------+--------|
  * |  TT 2  |   J  |   H  |   O  |   U  |   K  |Ctrl+C|       |Supr+L|   G  |   C  |   R  |   F  |   Z  |  TT 3  |
  * |--------+------+------+------+------+------|      |       |      |------+------+------+------+------+--------|
@@ -40,7 +40,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [0] = LAYOUT_ergodox(
     // Left
-     KC_F3,          KC_4,    KC_0,    KC_1,    KC_2,    KC_3,   LCTL(KC_Z)
+     KC_AMPR,        KC_4,    KC_0,    KC_1,    KC_2,    KC_3,   LCTL(KC_Z)
     ,TT(2),          KC_J,    KC_H,    KC_O,    KC_U,    KC_K,   LCTL(KC_C)
     ,KC_MINUS,       KC_Q,    KC_I,    KC_E,    KC_A,    KC_Y
     ,LT(1,KC_ESCAPE),KC_SLASH,KC_COMMA,KC_QUOTE,KC_DOT,  KC_X,   LCTL(KC_V)
@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Layer 1: Shift
  *
  * .--------------------------------------------------.       .--------------------------------------------------.
- * |Shft+Esc|      |   +  |   =  |   =  |      |      |       |      |      |   ^  |   %  |   ~  |      |  TO 0  |
+ * |Shft+Esc|  F3  |   +  |   =  |   =  |  F4  |      |       |      |  F5  |   ^  |   %  |   ~  |  F12 |  TO 0  |
  * |--------+------+------+------+------+-------------|       |------+------+------+------+------+------+--------|
  * |  TT 2  |      |      |      |      |      |      |       |      |      |      |      |      |      |  TT 3  |
  * |--------+------+------+------+------+------|      |       |      |------+------+------+------+------+--------|
@@ -81,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [1] = LAYOUT_ergodox(
     // Left
-     LSFT(KC_ESCAPE),_______,  KC_PLUS, KC_EQUAL,KC_ASTERISK,_______,LCTL(LSFT(KC_Z))
+     LSFT(KC_ESCAPE),KC_F3,   KC_PLUS, KC_EQUAL,KC_ASTERISK,KC_F4,LCTL(LSFT(KC_Z))
     ,_______,        LSFT(KC_J),LSFT(KC_H),LSFT(KC_O),LSFT(KC_U),LSFT(KC_K),LCTL(LSFT(KC_C))
     ,KC_UNDS,        LSFT(KC_Q),LSFT(KC_I),LSFT(KC_E),LSFT(KC_A),LSFT(KC_Y)
     ,_______,        KC_QUES, KC_EXLM, KC_GRAVE,KC_AT,   LSFT(KC_X),LCTL(LSFT(KC_V))
@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                        ,OSM(MOD_LSFT|MOD_LALT)
                                       ,LSFT(KC_SPACE),LSFT(KC_TAB),LSFT(KC_ENTER)
     // Right
-    ,_______,         _______,  KC_CIRC, KC_PERC, KC_TILD, _______, TO(0)
+    ,_______,         KC_F5,   KC_CIRC, KC_PERC, KC_TILD, KC_F12,  TO(0)
     ,_______,         LSFT(KC_G),LSFT(KC_C),LSFT(KC_R),LSFT(KC_F),LSFT(KC_Z),_______
                      ,LSFT(KC_D),LSFT(KC_S),LSFT(KC_T),LSFT(KC_N),LSFT(KC_B),KC_SCOLON
     ,LSFT(KC_DELETE), LSFT(KC_W),LSFT(KC_M),LSFT(KC_L),LSFT(KC_P),LSFT(KC_V),_______
