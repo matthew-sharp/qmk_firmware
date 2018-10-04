@@ -34,7 +34,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                      | LCtrl| Home |       | PgUp | RCtrl|
  *                               .------+------+------|       |------+------+------.
  *                               |      |      | End  |       | PgDn |      |      |
- *                               | Space|  Tab |------|       |------| OSL 1| Bksp |
+ *                               | Space| OSL 1|------|       |------| Tab  | Bksp |
  *                               |      |      | Enter|       | OSL 2|      |      |
  *                               .--------------------.       .--------------------.
  */
@@ -47,7 +47,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ,OSL(4),  KC_LEFT, KC_UP,   KC_DOWN, KC_RIGHT
                                                ,OSM(MOD_LCTL),KC_HOME
                                                         ,KC_END
-                                      ,KC_SPACE,KC_TAB,  KC_ENTER
+                                      ,KC_SPACE,OSL(1),  KC_ENTER
     // Right
       ,LCTL(KC_F10),  KC_7,    KC_6,    KC_5,    KC_9,    KC_8,    TO(0)
       ,LGUI(KC_L),    KC_G,    KC_C,    KC_R,    KC_F,    KC_Z,    TT(3)
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                               ,KC_DELETE,OSM(MOD_LSFT),TT(1),OSM(MOD_RALT),OSM(MOD_RCTL)
       ,KC_PGUP,       OSM(MOD_RCTL)
       ,KC_PGDOWN
-      ,OSL(2), OSL(1),  KC_BSPACE),
+      ,OSL(2), KC_TAB,  KC_BSPACE),
 
 /* Layer 1: Shift
  *
@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ,OSM(MOD_LSFT|MOD_LCTL),LSFT(KC_LEFT),LSFT(KC_UP),LSFT(KC_DOWN),LSFT(KC_RIGHT)
                                                ,OSM(MOD_LSFT|MOD_LCTL),LSFT(KC_PGUP)
                                                        ,OSM(MOD_LSFT|MOD_LALT)
-                                      ,LSFT(KC_SPACE),LSFT(KC_TAB),LSFT(KC_ENTER)
+                                      ,LSFT(KC_SPACE),_______,LSFT(KC_ENTER)
     // Right
     ,_______,         KC_F5,   KC_CIRC, KC_PERC, KC_TILD, KC_F12,  TO(0)
     ,_______,         LSFT(KC_G),LSFT(KC_C),LSFT(KC_R),LSFT(KC_F),LSFT(KC_Z),_______
@@ -97,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                               ,LSFT(KC_HOME),LSFT(KC_END),_______,LSFT(KC_RALT),LSFT(KC_RCTRL)
     ,LSFT(KC_PGDOWN), LSFT(KC_LCTL)
     ,LSFT(KC_LALT)
-    ,_______,  _______,LSFT(KC_BSPACE)),
+    ,_______,  LSFT(KC_TAB),LSFT(KC_BSPACE)),
 
 /* Layer 2: Symbols
  *
@@ -130,7 +130,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ,_______,          KC_LEFT, KC_UP,   KC_DOWN, KC_RIGHT
                                                ,KC_ENTER,KC_PGUP
                                                         ,_______
-                                      ,KC_SPACE,KC_TAB,  _______
+                                      ,KC_SPACE,_______, _______
   // Right
   ,KC_APPLICATION,    KC_7,     KC_6,    KC_5,    KC_9,    KC_8,    _______
   ,OSM(MOD_LGUI),     KC_INSERT,KC_LBRACKET,KC_UNDS,KC_RBRACKET,KC_PAUSE,_______
