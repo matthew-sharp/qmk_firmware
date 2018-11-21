@@ -18,8 +18,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |        |   ?    |   !    |   `    |   @    |        |        |        |        |        |        |        |        |        |        |
  * |Shft/Esc|   /    |   ,    |   '    |   .    |   X    | Enter  |  Alt   |  OSL2  |   W    |   M    |   L    |   P    |   V    |Shft/Esc|
  * |--------+--------+--------+--------+--------+-----------------+--------+--------+--------+--------+-----------------+--------+--------|
- * |        |        |        |        |        |        |        |        |        |        |        |        |  Next  |        |        |
- * |  OSL4  |  Left  |   Up   |  Down  |  Right |  Spc   |  Tab   |  Ctrl  |  OSL1  |  Bksp  |  Del   |  Supr  | Play/Ps| AltGr  |  Ctrl  |
+ * |        |        |        |        |        |        |        |        |        |        |        |  Super |  Next  |        |        |
+ * |  OSL4  |  Left  |   Up   |  Down  |  Right |  Spc   |  OSL1  |  Ctrl  |  Tab   |  Bksp  |  Del   |  Shift | Play/Ps| AltGr  |  Ctrl  |
  * '--------------------------------------------------------------------------------------------------------------------------------------'
  */
   [0] = LAYOUT_ortho_5x15(
@@ -27,13 +27,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    ,TT(2),   KC_J,    KC_H,    KC_O,    KC_U,    KC_K,    KC_HOME, KC_DQUO, KC_PGUP, KC_G,    KC_C,    KC_R,    KC_F,   KC_Z,     TT(3)
    ,KC_MINS, KC_Q,    KC_I,    KC_E,    KC_A,    KC_Y,    KC_END, KC_AMPR,  KC_PGDN, KC_D,    KC_S,    KC_T,    KC_N,   KC_B,     KC_COLN
    ,LT(1,KC_ESCAPE), KC_SLSH, KC_COMM, KC_QUOT, KC_DOT, KC_X, KC_ENT, OSM(MOD_LALT), OSL(2), KC_W, KC_M, KC_L,  KC_P,   KC_V,     LT(1,KC_ESCAPE)
-   ,OSL(4), KC_LEFT, KC_UP, KC_DOWN, KC_RGHT, KC_SPC, KC_TAB, OSM(MOD_LCTL), OSL(1), KC_BSPC, KC_DEL, OSM(MOD_LGUI), KC_MPLY, KC_RALT, OSM(MOD_RCTL)),
+   ,OSL(4), KC_LEFT, KC_UP, KC_DOWN, KC_RGHT, KC_SPC, OSL(1), OSM(MOD_LCTL), KC_TAB, KC_BSPC, KC_DEL, OSM(MOD_LSFT), KC_MPLY, KC_RALT, OSM(MOD_RCTL)),
   [1] = LAYOUT_ortho_5x15(
     LSFT(KC_ESC), KC_F3, KC_PLUS, KC_EQL, KC_ASTR, KC_F4, LCTL(LSFT(KC_Z)), _______, LCTL(LSFT(KC_F10)), KC_F5, KC_CIRC, KC_PERC, KC_TILD, KC_F12, _______
    ,_______, LSFT(KC_J), LSFT(KC_H), LSFT(KC_O), LSFT(KC_U), LSFT(KC_K), LSFT(KC_HOME), KC_HASH, LSFT(KC_PGUP), LSFT(KC_G), LSFT(KC_C), LSFT(KC_R), LSFT(KC_F), LSFT(KC_Z), _______
    ,KC_UNDS, LSFT(KC_Q), LSFT(KC_I), LSFT(KC_E), LSFT(KC_A), LSFT(KC_Y), LSFT(KC_END), KC_DLR, LSFT(KC_PGDN), LSFT(KC_D), LSFT(KC_S), LSFT(KC_T), LSFT(KC_N), LSFT(KC_B), KC_SCLN
    ,_______, KC_QUES, KC_EXLM, KC_GRV, KC_AT, LSFT(KC_X), LSFT(KC_ENT), OSM(MOD_LALT|MOD_LSFT), OSL(2), LSFT(KC_W), LSFT(KC_M), LSFT(KC_L), LSFT(KC_P), LSFT(KC_V), _______
-   ,OSM(MOD_LCTL|MOD_LSFT), LSFT(KC_LEFT), LSFT(KC_UP), LSFT(KC_DOWN), LSFT(KC_RGHT), LSFT(KC_SPC), LSFT(KC_TAB), OSM(MOD_LCTL|MOD_LSFT), _______, LSFT(KC_BSPC), LSFT(KC_DEL), OSM(MOD_LGUI|MOD_LSFT), KC_MNXT, LSFT(KC_RALT), OSM(MOD_LCTL|MOD_LSFT)),
+   ,OSM(MOD_LCTL|MOD_LSFT), LSFT(KC_LEFT), LSFT(KC_UP), LSFT(KC_DOWN), LSFT(KC_RGHT), LSFT(KC_SPC), LSFT(KC_TAB), OSM(MOD_LCTL|MOD_LSFT), _______, LSFT(KC_BSPC), LSFT(KC_DEL), OSM(MOD_LGUI), KC_MNXT, LSFT(KC_RALT), OSM(MOD_LCTL|MOD_LSFT)),
 
 /* Layer 2: Symbols
  * .--------------------------------------------------------------------------------------------------------------------------------------.
