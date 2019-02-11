@@ -107,7 +107,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |        |      |   <  |   $  |   >  |      |      |       | Supr |  Ins |   [  |   _  |   ]  | Pause|  TT 3  |
  * |--------+------+------+------+------+------|      |       |      |------+------+------+------+------+--------|
  * |    -   |   \  |   (  |   "  |   )  |   #  |------|       |------|   %  |   {  |   =  |   }  |   |  |    ;   |
- * |--------+------+------+------+------+------|      |       |  Del |------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------|      |       |      |------+------+------+------+------+--------|
  * |        |   /  |   :  |   *  |   +  |   !  |      |       |      | PrtSc|   &  |   ^  |   ~  |      |        |
  * .--------+------+------+------+------+-------------.       .-------------+------+------+------+------+--------.
  *   |      |      |      |      |      |                                   |      |      |      |      |      |
@@ -135,7 +135,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ,KC_APPLICATION,    KC_7,     KC_6,    KC_5,    KC_9,    KC_8,    _______
   ,OSM(MOD_LGUI),     KC_INSERT,KC_LBRACKET,KC_UNDS,KC_RBRACKET,KC_PAUSE,_______
                      ,KC_PERC,  KC_LCBR, KC_EQUAL,KC_RCBR, KC_PIPE, KC_SCOLON
-  ,KC_DELETE,         KC_PSCREEN,KC_AMPR,KC_CIRC, KC_TILD, _______, KC_RSPC
+  ,_______,           KC_PSCREEN,KC_AMPR,KC_CIRC, KC_TILD, _______, KC_RSPC
                                ,KC_HOME, KC_END,  _______, _______, _______
   ,KC_PGDOWN, _______
   ,_______
