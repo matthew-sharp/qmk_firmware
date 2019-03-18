@@ -86,8 +86,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ,KC_UNDS,        LSFT(KC_Q),LSFT(KC_I),LSFT(KC_E),LSFT(KC_A),LSFT(KC_Y)
     ,_______,        KC_QUES, KC_EXLM, KC_GRAVE,KC_AT,   LSFT(KC_X),LCTL(LSFT(KC_V))
     ,OSM(MOD_LSFT|MOD_LCTL),LSFT(KC_LEFT),LSFT(KC_UP),LSFT(KC_DOWN),LSFT(KC_RIGHT)
-                                               ,OSM(MOD_LSFT|MOD_LCTL),LSFT(KC_PGUP)
-                                                       ,OSM(MOD_LSFT|MOD_LALT)
+                                               ,OSM(MOD_LSFT|MOD_LCTL),LSFT(KC_HOME)
+                                                        ,S(KC_END)
                                       ,LSFT(KC_SPACE),_______,LSFT(KC_ENTER)
     // Right
     ,_______,         KC_F5,   KC_CIRC, KC_PERC, KC_TILD, KC_F12,  TO(0)
@@ -95,8 +95,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                      ,LSFT(KC_D),LSFT(KC_S),LSFT(KC_T),LSFT(KC_N),LSFT(KC_B),KC_SCOLON
     ,LSFT(KC_DELETE), LSFT(KC_W),LSFT(KC_M),LSFT(KC_L),LSFT(KC_P),LSFT(KC_V),_______
                               ,LSFT(KC_HOME),LSFT(KC_END),_______,LSFT(KC_RALT),LSFT(KC_RCTRL)
-    ,LSFT(KC_PGDOWN), LSFT(KC_LCTL)
-    ,LSFT(KC_LALT)
+    ,LSFT(KC_PGUP),   LSFT(KC_RCTL)
+    ,LSFT(KC_PGDOWN)
     ,_______,  LSFT(KC_TAB),LSFT(KC_BSPACE)),
 
 /* Layer 2: Symbols
