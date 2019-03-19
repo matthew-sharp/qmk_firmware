@@ -3,10 +3,6 @@
 #include "action_layer.h"
 #include "version.h"
 
-#include "keymap_german.h"
-
-#include "keymap_nordic.h"
-
 #define _______ KC_TRNS
 
 enum custom_keycodes {
@@ -20,7 +16,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Layer 0: Base
  *
  * .--------------------------------------------------.       .--------------------------------------------------.
- * |    &   |   4  |   0  |   1  |   2  |   3  |Ctrl+Z|       |Ctrl+F10| 7  |   6  |   5  |   9  |   8  |  TO 0  |
+ * |  LEAD  |   4  |   0  |   1  |   2  |   3  |Ctrl+Z|       |Ctrl+F10| 7  |   6  |   5  |   9  |   8  |  TO 0  |
  * |--------+------+------+------+------+-------------|       |------+------+------+------+------+------+--------|
  * |  TT 2  |   J  |   H  |   O  |   U  |   K  |Ctrl+C|       |Supr+L|   G  |   C  |   R  |   F  |   Z  |  TT 3  |
  * |--------+------+------+------+------+------|      |       |      |------+------+------+------+------+--------|
@@ -40,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [0] = LAYOUT_ergodox(
     // Left
-     KC_AMPR,        KC_4,    KC_0,    KC_1,    KC_2,    KC_3,   LCTL(KC_Z)
+     KC_LEAD,        KC_4,    KC_0,    KC_1,    KC_2,    KC_3,   LCTL(KC_Z)
     ,TT(2),          KC_J,    KC_H,    KC_O,    KC_U,    KC_K,   LCTL(KC_C)
     ,KC_MINUS,       KC_Q,    KC_I,    KC_E,    KC_A,    KC_Y
     ,LT(1,KC_ESCAPE),KC_SLASH,KC_COMMA,KC_QUOTE,KC_DOT,  KC_X,   LCTL(KC_V)
@@ -226,6 +222,36 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   ,_______, _______,  _______),
 };
 
+LEADER_EXTERNS();
+
+void matrix_scan_user(void) {
+  LEADER_DICTIONARY() {
+    leading = false;
+    leader_end();
+
+    SEQ_ONE_KEY(KC_C) {
+      register_code(KC_LSFT);
+      register_code(KC_END);
+      unregister_code(KC_END);
+      unregister_code(KC_LSFT);
+      register_code(KC_DELETE);
+      unregister_code(KC_DELETE);
+    }
+    SEQ_ONE_KEY(KC_D) {
+      register_code(KC_HOME);
+      unregister_code(KC_HOME);
+      register_code(KC_LSFT);
+      register_code(KC_DOWN);
+      unregister_code(KC_DOWN);
+      unregister_code(KC_LSFT);
+      register_code(KC_LCTRL);
+      register_code(KC_X);
+      unregister_code(KC_X);
+      unregister_code(KC_LCTRL);
+    }
+  }
+}
+
 const uint16_t PROGMEM fn_actions[] = {
   [1] = ACTION_LAYER_TAP_TOGGLE(1)
 };
@@ -261,12 +287,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case VRSN:
       if (record->event.pressed) {
         SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION);
-      }
-      return false;
-      break;
-    case RGB_SLD:
-      if (record->event.pressed) {
-        rgblight_mode(1);
       }
       return false;
       break;
