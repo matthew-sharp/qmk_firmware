@@ -249,6 +249,14 @@ void matrix_scan_user(void) {
       unregister_code(KC_X);
       unregister_code(KC_LCTRL);
     }
+    SEQ_ONE_KEY(KC_F) {
+      register_code(KC_LCTRL);
+      register_code(KC_B);
+      unregister_code(KC_B);
+      unregister_code(KC_LCTRL);
+      register_code(KC_LBRACKET);
+      unregister_code(KC_LBRACKET);
+    }
   }
 }
 
