@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Layer 1: Shift
  *
  * .--------------------------------------------------.       .--------------------------------------------------.
- * |Shft+Esc|  F3  |   +  |   =  |   =  |  F4  |      |       |      |  F5  |   ^  |   %  |   ~  |  F12 |  TO 0  |
+ * |Shft+Esc|  F3  |   +  |   =  |   *  |  F4  |      |       |      |  F5  |   ^  |   %  |   ~  |  F12 |  TO 0  |
  * |--------+------+------+------+------+-------------|       |------+------+------+------+------+------+--------|
  * |  TT 2  |      |      |      |      |      |      |       |      |      |      |      |      |      |  TT 3  |
  * |--------+------+------+------+------+------|      |       |      |------+------+------+------+------+--------|
@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ,_______,         LSFT(KC_G),LSFT(KC_C),LSFT(KC_R),LSFT(KC_F),LSFT(KC_Z),_______
                      ,LSFT(KC_D),LSFT(KC_S),LSFT(KC_T),LSFT(KC_N),LSFT(KC_B),KC_SCOLON
     ,LSFT(KC_DELETE), LSFT(KC_W),LSFT(KC_M),LSFT(KC_L),LSFT(KC_P),LSFT(KC_V),_______
-                              ,LSFT(KC_HOME),LSFT(KC_END),_______,LSFT(KC_RALT),LSFT(KC_RCTRL)
+                              ,S(KC_DELETE),_______,_______,OSM(MOD_LSFT|MOD_RALT),OSM(MOD_LSFT|MOD_RCTRL)
     ,LSFT(KC_PGUP),   LSFT(KC_RCTL)
     ,LSFT(KC_PGDOWN)
     ,_______,  LSFT(KC_TAB),LSFT(KC_BSPACE)),
