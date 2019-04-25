@@ -12,6 +12,13 @@ enum custom_keycodes {
   RGB_SLD,
 };
 
+// Layer Names
+#define MBKL 0
+#define MSBKL 1
+#define SYM 2
+#define NUM 3
+#define MCTRLSH 4
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Layer 0: Base
  *
@@ -34,25 +41,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                               |      |      | Enter|       | OSL 2|      |      |
  *                               .--------------------.       .--------------------.
  */
-  [0] = LAYOUT_ergodox(
+  [MBKL] = LAYOUT_ergodox(
     // Left
      KC_LEAD,        KC_4,    KC_0,    KC_1,    KC_2,    KC_3,   LGUI(KC_Z)
-    ,TT(2),          KC_J,    KC_H,    KC_O,    KC_U,    KC_K,   LGUI(KC_C)
+    ,TT(SYM),        KC_J,    KC_H,    KC_O,    KC_U,    KC_K,   LGUI(KC_C)
     ,KC_MINUS,       KC_Q,    KC_I,    KC_E,    KC_A,    KC_Y
-    ,LT(1,KC_ESCAPE),KC_SLASH,KC_COMMA,KC_QUOTE,KC_DOT,  KC_X,   LGUI(KC_V)
-    ,LM(4, MOD_LGUI),KC_LEFT, KC_UP,   KC_DOWN, KC_RIGHT
+    ,LT(MSBKL,KC_ESCAPE),KC_SLASH,KC_COMMA,KC_QUOTE,KC_DOT,  KC_X,   LGUI(KC_V)
+    ,LM(MCTRLSH, MOD_LGUI),KC_LEFT, KC_UP,   KC_DOWN, KC_RIGHT
                                                ,OSM(MOD_LGUI),KC_HOME
                                                         ,KC_END
-                                      ,KC_SPACE,OSL(1),  KC_ENTER
+                                      ,KC_SPACE,OSL(MSBKL),  KC_ENTER
     // Right
-      ,C(KC_UP),      KC_7,    KC_6,    KC_5,    KC_9,    KC_8,    TO(0)
-      ,G(C(KC_Q)),    KC_G,    KC_C,    KC_R,    KC_F,    KC_Z,    TT(3)
+      ,C(KC_UP),      KC_7,    KC_6,    KC_5,    KC_9,    KC_8,    TO(MBKL)
+      ,G(C(KC_Q)),    KC_G,    KC_C,    KC_R,    KC_F,    KC_Z,    TT(NUM)
                      ,KC_D,    KC_S,    KC_T,    KC_N,    KC_B,    KC_COLN
-      ,OSM(MOD_LCTL),  KC_W,    KC_M,    KC_L,    KC_P,    KC_V,    LT(1,KC_ESCAPE)
-                              ,KC_DELETE,OSM(MOD_LSFT),TT(1),OSM(MOD_LALT),OSM(MOD_LGUI)
+      ,OSM(MOD_LCTL), KC_W,    KC_M,    KC_L,    KC_P,    KC_V,    LT(MSBKL,KC_ESCAPE)
+                              ,KC_DELETE,OSM(MOD_LSFT),TT(MSBKL),OSM(MOD_LALT),OSM(MOD_LGUI)
       ,KC_PGUP,       OSM(MOD_LGUI)
       ,KC_PGDOWN
-      ,OSL(2), KC_TAB,  KC_BSPACE),
+      ,OSL(SYM), KC_TAB,  KC_BSPACE),
 
 /* Layer 1: Shift
  *
@@ -75,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                               |      |      |      |       | OSL 2|      |      |
  *                               .--------------------.       .--------------------.
  */
-  [1] = LAYOUT_ergodox(
+  [MSBKL] = LAYOUT_ergodox(
     // Left
      LSFT(KC_ESCAPE),KC_F3,   KC_PLUS, KC_EQUAL,KC_ASTERISK,KC_F4,LCTL(LSFT(KC_Z))
     ,_______,        LSFT(KC_J),LSFT(KC_H),LSFT(KC_O),LSFT(KC_U),LSFT(KC_K),LCTL(LSFT(KC_C))
@@ -117,7 +124,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                               .--------------------.       .--------------------.
  */
 
-  [2] = LAYOUT_ergodox(
+  [SYM] = LAYOUT_ergodox(
   // Left
    _______,          _______, _______, _______, _______, _______,_______
   ,_______,          _______, KC_LABK, KC_DLR,  KC_RABK, _______,_______
@@ -159,7 +166,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                               .--------------------.       .--------------------.
  */
 
-  [3] = LAYOUT_ergodox(
+  [NUM] = LAYOUT_ergodox(
   // Left
    _______,          KC_LEFT, KC_UP,   KC_DOWN, KC_RIGHT,KC_MINUS,_______
   ,_______,          KC_EQUAL,KC_7,    KC_8,    KC_9,    KC_PLUS, _______
@@ -201,7 +208,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                               .--------------------.       .--------------------.
  */
 
-  [4] = LAYOUT_ergodox(
+  [MCTRLSH] = LAYOUT_ergodox(
   // Left
    _______,           _______, _______, _______, _______, _______, _______
   ,_______,           _______, _______, _______, _______, _______, _______
