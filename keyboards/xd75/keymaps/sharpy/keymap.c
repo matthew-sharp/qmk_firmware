@@ -5,10 +5,11 @@
 
 // Layer names
 #define LWBKL 0
-#define LWSBKL 1
-#define SYM 2
-#define NUM 3
-#define CTRLSH 4
+#define LWSBKL 2
+#define SYM 3
+#define NUM 4
+#define CTRLSH 5
+#define _QW 1
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Layer 0+1: Base+Shift
@@ -16,10 +17,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |Shft+Esc|   F3   |   +    |   =    |   *    |   F4   |        |        |C+S+F10 |   F5   |   ^    |   %    |   ~    |  F12   |        |
  * |   |    |   4    |   0    |   1    |   2    |   3    | Ctrl+Z |  TT1   |Ctrl+F10|   7    |   6    |   5    |   9    |   8    |  TO 0  |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+-----------------|
- * |        |        |        |        |        |        |        |   "    |        |        |        |        |        |        |        |
- * |  TT2   |   J    |   H    |   O    |   U    |   K    |  Home  |   #    |  PgUp  |   G    |   C    |   R    |   F    |   Z    |   TT3  |
+ * |        |        |        |        |        |        |        |   #    |        |        |        |        |        |        |        |
+ * |  TT2   |   J    |   H    |   O    |   U    |   K    |  Home  | QWERTY |  PgUp  |   G    |   C    |   R    |   F    |   Z    |   TT3  |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+-----------------+--------|
- * |   _    |        |        |        |        |        |        |   $    |        |        |        |        |        |        |   ;    |
+ * |   _    |        |        |        |        |        |        |   "    |        |        |        |        |        |        |   ;    |
  * |   -    |   Q    |   I    |   E    |   A    |   Y    |  End   |   &    |  PgDn  |   D    |   S    |   T    |   N    |   B    |   :    |
  * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------------------------+--------|
  * |        |   ?    |   !    |   `    |   @    |        |        |        |        |        |        |        |        |        |        |
@@ -31,16 +32,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
   [LWBKL] = LAYOUT_ortho_5x15(
     KC_PIPE, KC_4,    KC_0,    KC_1,    KC_2,    KC_3,    LCTL(KC_Z), TT(LWSBKL), LCTL(KC_F10), KC_7, KC_6, KC_5, KC_9, KC_8,     TO(LWBKL)
-   ,TT(SYM), KC_J,    KC_H,    KC_O,    KC_U,    KC_K,    KC_HOME, KC_DQUO, KC_PGUP, KC_G,    KC_C,    KC_R,    KC_F,   KC_Z,     TT(NUM)
+   ,TT(SYM), KC_J,    KC_H,    KC_O,    KC_U,    KC_K,    KC_HOME, TG(_QW), KC_PGUP, KC_G,    KC_C,    KC_R,    KC_F,   KC_Z,     TT(NUM)
    ,KC_MINS, KC_Q,    KC_I,    KC_E,    KC_A,    KC_Y,    KC_END, KC_AMPR,  KC_PGDN, KC_D,    KC_S,    KC_T,    KC_N,   KC_B,     KC_COLN
    ,LT(LWSBKL,KC_ESCAPE), KC_SLSH, KC_COMM, KC_QUOT, KC_DOT, KC_X, KC_ENT, OSM(MOD_LALT), OSL(SYM), KC_W, KC_M, KC_L, KC_P, KC_V, LT(LWSBKL,KC_ESCAPE)
    ,OSL(CTRLSH), KC_LEFT, KC_UP, KC_DOWN, KC_RGHT, KC_SPC, OSL(LWSBKL), OSM(MOD_LCTL), KC_TAB, KC_BSPC, KC_DEL, OSM(MOD_LSFT), KC_MPLY, KC_RALT, OSM(MOD_RCTL)),
   [LWSBKL] = LAYOUT_ortho_5x15(
     LSFT(KC_ESC), KC_F3, KC_PLUS, KC_EQL, KC_ASTR, KC_F4, LCTL(LSFT(KC_Z)), _______, LCTL(LSFT(KC_F10)), KC_F5, KC_CIRC, KC_PERC, KC_TILD, KC_F12, _______
    ,_______, LSFT(KC_J), LSFT(KC_H), LSFT(KC_O), LSFT(KC_U), LSFT(KC_K), LSFT(KC_HOME), KC_HASH, LSFT(KC_PGUP), LSFT(KC_G), LSFT(KC_C), LSFT(KC_R), LSFT(KC_F), LSFT(KC_Z), _______
-   ,KC_UNDS, LSFT(KC_Q), LSFT(KC_I), LSFT(KC_E), LSFT(KC_A), LSFT(KC_Y), LSFT(KC_END), KC_DLR, LSFT(KC_PGDN), LSFT(KC_D), LSFT(KC_S), LSFT(KC_T), LSFT(KC_N), LSFT(KC_B), KC_SCLN
+   ,KC_UNDS, LSFT(KC_Q), LSFT(KC_I), LSFT(KC_E), LSFT(KC_A), LSFT(KC_Y), LSFT(KC_END), KC_DQUO, LSFT(KC_PGDN), LSFT(KC_D), LSFT(KC_S), LSFT(KC_T), LSFT(KC_N), LSFT(KC_B), KC_SCLN
    ,_______, KC_QUES, KC_EXLM, KC_GRV, KC_AT, LSFT(KC_X), LSFT(KC_ENT), OSM(MOD_LALT|MOD_LSFT), OSL(SYM), LSFT(KC_W), LSFT(KC_M), LSFT(KC_L), LSFT(KC_P), LSFT(KC_V), _______
    ,OSM(MOD_LCTL|MOD_LSFT), S(KC_LEFT), S(KC_UP), S(KC_DOWN), S(KC_RGHT), S(KC_SPC), _______, OSM(MOD_LCTL|MOD_LSFT), S(KC_TAB), S(KC_BSPC), S(KC_DEL), OSM(MOD_LGUI), KC_MNXT, S(KC_RALT), OSM(MOD_LCTL|MOD_LSFT)),
+
+  [_QW] = LAYOUT_ortho_5x15( /* QWERTY */
+    KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_MINS, KC_GRV,  KC_EQL,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    _______,
+    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_LBRC, _______, KC_RBRC, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_QUOT,
+    KC_BSLS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_HOME, _______,  KC_PGUP, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
+    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    _______, KC_UP,   KC_PGDN, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
+    KC_LCTL, KC_NO,   KC_LALT, KC_LALT, KC_SPC,  KC_SPC,  KC_LEFT, KC_DOWN, KC_RGHT, KC_SPC,  KC_SPC,  KC_NO,   KC_RALT, KC_NO, KC_RCTL
+  ),
 
 /* Layer 2: Symbols
  * .--------------------------------------------------------------------------------------------------------------------------------------.
@@ -105,11 +114,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 uint32_t layer_state_set_user(uint32_t state) {
   uint8_t r = 0, g = 0, b = 0;
-  if (state & (1 << 1))
+  if (state & (1 << LWSBKL))
     r += 0xFF;
-  if (state & (1 << 2))
+  if (state & (1 << SYM))
     g += 0xFF;
-  if (state & (1 << 3))
+  if (state & (1 << NUM))
     b += 0xFF;
   rgblight_setrgb(r, g, b);
   return state;
