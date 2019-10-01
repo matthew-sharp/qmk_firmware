@@ -108,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * .--------------------------------------------------.       .--------------------------------------------------.
  * |        |      |      |      |      |      |      |       |  App |      |      |      |      |      |  TO 0  |
  * |--------+------+------+------+------+-------------|       |------+------+------+------+------+------+--------|
- * |        |      |   <  |   $  |   >  |      |      |       | AltGr|  Ins |   [  |   _  |   ]  | Pause|  TT 3  |
+ * |        |      |   <  |   $  |   >  |Ply/Ps|      |       | AltGr|  Ins |   [  |   _  |   ]  | Pause|  TT 3  |
  * |--------+------+------+------+------+------|      |       |      |------+------+------+------+------+--------|
  * |    -   |   \  |   (  |   "  |   )  |   +  |------|       |------|   %  |   {  |   &  |   }  |   ~  |    ;   |
  * |--------+------+------+------+------+------|      |       |      |------+------+------+------+------+--------|
@@ -128,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [SYM] = LAYOUT_ergodox(
   // Left
    _______,          _______, _______, _______, _______, _______,_______
-  ,_______,          _______, KC_LABK, KC_DLR,  KC_RABK, _______,_______
+  ,_______,          _______, KC_LABK, KC_DLR,  KC_RABK, KC_MPLY,_______
   ,KC_MINUS,         KC_BSLASH,KC_LPRN,KC_DQUO, KC_RPRN, KC_PLUS
   ,KC_LSPO,          KC_SLASH,KC_COLN, KC_ASTR, KC_HASH, KC_EXLM,_______
   ,_______,          _______, _______, _______, _______
@@ -255,11 +255,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_ESCAPE,      KC_1,    KC_2,    KC_3,    KC_4,    KC_5,   KC_6
     ,KC_TAB,         KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,   KC_F6
     ,KC_MINUS,       KC_A,    KC_S,    KC_D,    KC_F,    KC_G
-    ,MOD_LSFT,       KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,   KC_F5
-    ,MOD_LCTL,      KC_F1,   KC_F2,   KC_F3,    KC_F4
+    ,KC_LSFT,        KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,   KC_F5
+    ,KC_LCTL,       KC_F1,   KC_F2,   KC_F3,    KC_F4
                                                ,OSM(MOD_LGUI),KC_GRAVE
                                                         ,KC_EQUAL
-                                      ,KC_SPACE,MOD_LALT,  KC_ENTER
+                                      ,KC_SPACE, KC_LALT,  KC_ENTER
     // Right
       ,_______,       _______, _______, _______, _______, _______,    TO(MBKL)
       ,_______,       _______, _______, _______, _______, _______,    _______
