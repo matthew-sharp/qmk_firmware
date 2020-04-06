@@ -14,22 +14,26 @@ enum custom_keycodes {
 
 // Layer Names
 #define MBKL 0
-#define MSBKL 1
-#define SYM 2
-#define NUM 3
-#define MCTRLSH 4
-#define GAME 5
+#define LWCTRL 1
+#define MSBKL 2
+#define SYM 3
+#define NUM 4
+#define MCTRLSH 5
+#define GAME 6
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-/* Layer 0: Base
+/* Layer 0+1: Base + Shift
  *
  * .--------------------------------------------------.       .--------------------------------------------------.
- * |  LEAD  |   4  |   0  |   1  |   2  |   3  | Cmd+Z|       |Ctrl+Up|  7  |   6  |   5  |   9  |   8  |  TO 0  |
+ * |Shft+Esc|  F3  |   +  |   =  |   *  |  F4  |      |       |       |  F5 |   ^  |   %  |   ~  |  F12 |        |
+ * |  LEAD  |   4  |   0  |   1  |   2  |   3  | Cmd+Z|       |Ctl+F10|  7  |   6  |   5  |   9  |   8  |  TO 0  |
  * |--------+------+------+------+------+-------------|       |------+------+------+------+------+------+--------|
- * |  TT 2  |   J  |   H  |   O  |   U  |   K  | Cmd+C|       |Ct+Cm+Q|  G  |   C  |   R  |   F  |   Z  |  TT 3  |
+ * |  TT 2  |   J  |   H  |   O  |   U  |   K  | Cmd+C|       |LT(CTL)|  G  |   C  |   R  |   F  |   Z  |  TT 3  |
  * |--------+------+------+------+------+------|      |       |      |------+------+------+------+------+--------|
+ * |    _   |      |      |      |      |      |      |       |      |      |      |      |      |      |    ;   |
  * |    -   |   Q  |   I  |   E  |   A  |   Y  |------|       |------|   D  |   S  |   T  |   N  |   B  |    :   |
  * |--------+------+------+------+------+------| Cmd+V|       | LCtl |------+------+------+------+------+--------|
+ * |        |   ?  |   !  |   `  |   @  |      |      |       |      |      |      |      |      |      |        |
  * |Shft/Esc|   /  |   ,  |   '  |   .  |   X  |      |       |      |   W  |   M  |   L  |   P  |   V  |Shft/Esc|
  * .--------+------+------+------+------+-------------.       .-------------+------+------+------+------+--------.
  *   |  Cmd | Left |  Up  | Down | Right|                                   |  Del |Shift | TT 1 |  Alt | Cmd  |
@@ -53,8 +57,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                         ,KC_END
                                       ,KC_SPACE,OSL(MSBKL),  KC_ENTER
     // Right
-      ,C(KC_UP),      KC_7,    KC_6,    KC_5,    KC_9,    KC_8,    TO(MBKL)
-      ,G(C(KC_Q)),    KC_G,    KC_C,    KC_R,    KC_F,    KC_Z,    TT(NUM)
+      ,C(KC_F10),     KC_7,    KC_6,    KC_5,    KC_9,    KC_8,    TO(MBKL)
+      ,TG(LWCTRL),    KC_G,    KC_C,    KC_R,    KC_F,    KC_Z,    TT(NUM)
                      ,KC_D,    KC_S,    KC_T,    KC_N,    KC_B,    KC_COLN
       ,OSM(MOD_LCTL), KC_W,    KC_M,    KC_L,    KC_P,    KC_V,    LT(MSBKL,KC_ESCAPE)
                               ,KC_DELETE,OSM(MOD_LSFT),TT(MSBKL),OSM(MOD_LALT),OSM(MOD_LGUI)
@@ -62,27 +66,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       ,KC_PGDOWN
       ,OSL(SYM), KC_TAB,  KC_BSPACE),
 
-/* Layer 1: Shift
- *
- * .--------------------------------------------------.       .--------------------------------------------------.
- * |Shft+Esc|  F3  |   +  |   =  |   *  |  F4  |      |       |      |  F5  |   ^  |   %  |   ~  |  F12 |  TO 0  |
- * |--------+------+------+------+------+-------------|       |------+------+------+------+------+------+--------|
- * |  TT 2  |      |      |      |      |      |      |       |      |      |      |      |      |      |  TT 3  |
- * |--------+------+------+------+------+------|      |       |      |------+------+------+------+------+--------|
- * |    _   |      |      |      |      |      |------|       |------|      |      |      |      |           ;   |
- * |--------+------+------+------+------+------|      |       |      |------+------+------+------+------+--------|
- * |   Esc  |   ?  |   !  |   `  |   @  |      |      |       |      |      |      |      |      |      |   Esc  |
- * .--------+------+------+------+------+-------------.       .-------------+------+------+------+------+--------.
- *   |      |      |      |      |      |                                   |      |      |      |      |      |
- *   .----------------------------------.                                   .----------------------------------.
- *                                      .-------------.       .-------------.
- *                                      |      |      |       |      |      |
- *                               .------+------+------|       |------+------+------.
- *                               |      |      |      |       |      |      |      |
- *                               |      |      |------|       |------|      |      |
- *                               |      |      |      |       | OSL 2|      |      |
- *                               .--------------------.       .--------------------.
- */
+  [LWCTRL] = LAYOUT_ergodox(
+    // Left
+     _______,         _______, _______, _______, _______, _______, C(KC_Z)
+    ,_______,         _______, _______, _______, _______, _______, C(KC_C)
+    ,_______,         _______, _______, _______, _______, _______
+    ,_______,         _______, _______, _______, _______, _______, C(KC_V)
+    ,LM(MCTRLSH, MOD_LCTL),    _______, _______, _______, _______
+                                                   ,OSM(MOD_LCTL),_______
+                                                            ,_______
+                                          ,_______, _______, _______
+    // Right
+    ,_______,         _______,  _______, _______, _______, _______, _______
+    ,_______,         _______,  _______, _______, _______, _______, _______
+                     ,_______,  _______, _______, _______, _______, _______
+    ,OSM(MOD_LGUI),   _______,  _______, _______, _______, _______, _______
+                               ,_______, _______, _______, _______, OSM(MOD_LCTL)
+    ,_______, OSM(MOD_LCTL)
+    ,_______
+    ,_______, _______,  _______),
+
   [MSBKL] = LAYOUT_ergodox(
     // Left
      LSFT(KC_ESCAPE),KC_F3,   KC_PLUS, KC_EQUAL,KC_ASTERISK,KC_F4,LCTL(LSFT(KC_Z))
@@ -213,8 +216,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Left
    _______,           _______, _______, _______, _______, _______, _______
   ,_______,           _______, _______, _______, _______, _______, _______
-  ,_______,           G(KC_A), _______, _______, _______, _______
-  ,_______,           G(KC_Z), G(KC_X), G(KC_C), G(KC_V), _______,_______
+  ,_______,           KC_A   , _______, _______, _______, _______
+  ,_______,           KC_Z   , KC_X   , KC_C   , KC_V   , _______, _______
   ,_______,           _______, _______, _______, _______
                                                  ,_______, _______
                                                           ,_______
@@ -360,58 +363,57 @@ uint32_t layer_state_set_user(uint32_t state) {
     ergodox_right_led_3_off();
     switch (layer) {
       case 0:
+      case LWCTRL:
         #ifdef RGBLIGHT_COLOR_LAYER_0
           rgblight_setrgb(RGBLIGHT_COLOR_LAYER_0);
         #endif
         break;
-      case 1:
+      case MSBKL:
         ergodox_right_led_1_on();
         #ifdef RGBLIGHT_COLOR_LAYER_1
           rgblight_setrgb(RGBLIGHT_COLOR_LAYER_1);
         #endif
         break;
-      case 2:
+      case SYM:
         ergodox_right_led_2_on();
         #ifdef RGBLIGHT_COLOR_LAYER_2
           rgblight_setrgb(RGBLIGHT_COLOR_LAYER_2);
         #endif
         break;
-      case 3:
+      case NUM:
         ergodox_right_led_3_on();
         #ifdef RGBLIGHT_COLOR_LAYER_3
           rgblight_setrgb(RGBLIGHT_COLOR_LAYER_3);
         #endif
         break;
-      case 4:
+      case 5:
         ergodox_right_led_1_on();
         ergodox_right_led_2_on();
         #ifdef RGBLIGHT_COLOR_LAYER_4
           rgblight_setrgb(RGBLIGHT_COLOR_LAYER_4);
         #endif
         break;
-      case 5:
+      case 6:
         ergodox_right_led_1_on();
         ergodox_right_led_3_on();
         #ifdef RGBLIGHT_COLOR_LAYER_5
           rgblight_setrgb(RGBLIGHT_COLOR_LAYER_5);
         #endif
         break;
-      case 6:
+      case 7:
         ergodox_right_led_2_on();
         ergodox_right_led_3_on();
         #ifdef RGBLIGHT_COLOR_LAYER_6
           rgblight_setrgb(RGBLIGHT_COLOR_LAYER_6);
         #endif
         break;
-      case 7:
+      default:
         ergodox_right_led_1_on();
         ergodox_right_led_2_on();
         ergodox_right_led_3_on();
         #ifdef RGBLIGHT_COLOR_LAYER_7
           rgblight_setrgb(RGBLIGHT_COLOR_LAYER_6);
         #endif
-        break;
-      default:
         break;
     }
     return state;
