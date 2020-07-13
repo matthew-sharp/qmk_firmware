@@ -28,7 +28,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |Shft+Esc|  F3  |   +  |   =  |   *  |  F4  |      |       |       |  F5 |   ^  |   %  |   ~  |  F12 |        |
  * |  LEAD  |   4  |   0  |   1  |   2  |   3  | Cmd+Z|       |Ctl+F10|  7  |   6  |   5  |   9  |   8  |  TO 0  |
  * |--------+------+------+------+------+-------------|       |------+------+------+------+------+------+--------|
- * |  TT 2  |   J  |   H  |   O  |   U  |   K  | Cmd+C|       |LT(CTL)|  G  |   C  |   R  |   F  |   Z  |  TT 3  |
+ * |  TT 2  |   J  |   H  |   O  |   U  |   K  | Cmd+C|       |Ct+Cmd+Q| G  |   C  |   R  |   F  |   Z  |  TT 3  |
  * |--------+------+------+------+------+------|      |       |      |------+------+------+------+------+--------|
  * |    _   |      |      |      |      |      |      |       |      |      |      |      |      |      |    ;   |
  * |    -   |   Q  |   I  |   E  |   A  |   Y  |------|       |------|   D  |   S  |   T  |   N  |   B  |    :   |
@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                       ,KC_SPACE,OSL(MSBKL),  KC_ENTER
     // Right
       ,C(KC_F10),     KC_7,    KC_6,    KC_5,    KC_9,    KC_8,    TO(MBKL)
-      ,TG(LWCTRL),    KC_G,    KC_C,    KC_R,    KC_F,    KC_Z,    TT(NUM)
+      ,G(C(KC_Q)),    KC_G,    KC_C,    KC_R,    KC_F,    KC_Z,    TT(NUM)
                      ,KC_D,    KC_S,    KC_T,    KC_N,    KC_B,    KC_COLN
       ,OSM(MOD_LCTL), KC_W,    KC_M,    KC_L,    KC_P,    KC_V,    LT(MSBKL,KC_ESCAPE)
                               ,KC_DELETE,OSM(MOD_LSFT),TT(MSBKL),OSM(MOD_LALT),OSM(MOD_LGUI)
