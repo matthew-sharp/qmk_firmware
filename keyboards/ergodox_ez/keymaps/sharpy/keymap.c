@@ -329,7 +329,8 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
     return MACRO_NONE;
 };
 
-void matrix_init_user(void) {
+void keyboard_post_init_user(void) {
+  layer_on(LWCTRL);
 #ifdef RGBLIGHT_COLOR_LAYER_0
   rgblight_setrgb(RGBLIGHT_COLOR_LAYER_0);
 #endif
